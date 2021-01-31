@@ -1,0 +1,199 @@
+<HTML>
+<HEAD>
+<style>
+#button{
+width: 300px;
+height: 300px;
+margin: 10px;
+border: 2px solid grey;
+padding: 5px;
+background-image: linear-gradient(to bottom right,pink,lightblue);
+}
+button{
+width: 65px;
+height: 40px;
+padding: 1px;
+margin: 2px;
+border: none;
+border-radius: 4px;
+}
+button:hover{
+background-color: grey;
+color: white;
+}
+input{
+width: 290px;
+height: 40px;
+padding: 10px;
+margin: 2px;
+border-radius: 4px;
+border: none;
+
+}
+
+h3{
+padding: 2px;
+margin: 2px;
+}
+</style>
+</HEAD>
+<TITLE> CALCULATOR </TITLE>
+<BODY>
+<div id = "button">
+<h3 id = "cal">CALCULATOR</h3>
+<input type = "text" id = "inputt" value = "" name = "iname"><br>
+<button type = "button" id = "zero" class = "btn" onClick = "zero()" >0</button>
+<button type = "button" id = "one" class = "btn" onClick = "one()" >1</button>
+<button type = "button" id = "plus" class = "btn" onClick = "plus()">+</button>
+<button type = "button" id = "minus" class = "btn" onClick = "minus()" >-</button>
+<button type = "button" id = "two" class = "btn" onClick = "two()" >2</button>
+<button type = "button" id = "three" class = "btn" onClick = "three()" >3</button>
+<button type = "button" id = "divide" class = "btn" onClick = "divide()">/</button>
+<button type = "button" id = "multiply" class = "btn" onClick = "multiply()" >*</button>
+<button type = "button" id = "four" class = "btn" onClick = "four()">4</button>
+<button type = "button" id = "five" class = "btn" onClick = "five()" >5</button>
+<button type = "button" id = "equalto" class = "btn" onClick = "equalto()" >=</button>
+<button type = "button" id = "clear" class = "btn" onClick = "clearto()" >C</button>
+<button type = "button" id = "six" class = "btn" onClick = "six()" >6</button>
+<button type = "button" id = "seven" class = "btn" onClick = "seven()" >7</button>
+<button type = "button" id = "inverse" class = "btn" onClick = "inverseto()" >1/x</button>
+<button type = "button" id = "squareto" class = "btn" onClick = "squareto()" >x<sup>2</sup></button>
+<button type = "button" id = "eight" class = "btn" onClick = "eight()">8</button>
+<button type = "button" id = "nine" class = "btn" onClick = "nine()" >9</button>
+<button type = "button" id = "squareroot" class = "btn" onClick = "squarerootto()" >x<sup>-1/2</sup></button>
+<button type = "button" id = "backspace" class = "btn" onClick = "backspaceto()" ><--</button>
+
+</div>
+<p id = "demo"></p>
+<script>
+let f;
+let j = 0,k = 0,n = 0,o = 0,i=0,l=0,h=0,r = 0;
+function one(){
+document.getElementById("inputt").value = document.getElementById("inputt").value + "1";
+}
+function two(){
+document.getElementById("inputt").value = document.getElementById("inputt").value + 2;
+}
+function three(){
+document.getElementById("inputt").value = document.getElementById("inputt").value + 3;
+}
+function four(){
+document.getElementById("inputt").value = document.getElementById("inputt").value + 4;
+}
+function five(){
+document.getElementById("inputt").value = document.getElementById("inputt").value + 5;
+}
+function six(){
+document.getElementById("inputt").value = document.getElementById("inputt").value + 6;
+}
+function seven(){
+document.getElementById("inputt").value = document.getElementById("inputt").value + 7;
+}
+function eight(){
+document.getElementById("inputt").value = document.getElementById("inputt").value + 8;
+}
+function nine(){
+document.getElementById("inputt").value = document.getElementById("inputt").value + 9;
+}
+function zero(){
+document.getElementById("inputt").value = document.getElementById("inputt").value + 0;
+}
+function clearto(){
+document.getElementById("inputt").value = "";
+let j = 0,k = 0,n = 0,o = 0,i = 0,l = 0,h = 0,r = 0;
+}
+let c;
+let m;
+
+function backspaceto(){
+r = document.getElementById("inputt").value;
+let g = r.length;
+let w = r.substring(0,g-1);
+document.getElementById("inputt").value = w;
+}
+
+function plus(){
+f = parseFloat(document.getElementById("inputt").value) + j;
+j = f;
+document.getElementById("inputt").value = "";
+m = "+";
+}
+function minus(){
+f = parseFloat(document.getElementById("inputt").value) + k;
+k = f;
+document.getElementById("inputt").value = "";
+m = "-";
+}
+function divide(){
+f = parseFloat(document.getElementById("inputt").value) + n;
+n = f;
+document.getElementById("inputt").value = "";
+m = "/";
+}
+function multiply(){
+f = parseFloat(document.getElementById("inputt").value) + o;
+o = f;
+document.getElementById("inputt").value = "";
+m = "*";
+}
+function inverseto(){
+f = parseFloat(document.getElementById("inputt").value) + i;
+i = f;
+document.getElementById("inputt").value = "";
+m = "1/x";
+}
+function squareto(){
+f = parseFloat(document.getElementById("inputt").value) + h;
+h = f;
+document.getElementById("inputt").value = "";
+m = "x2";
+}
+function squarerootto(){
+f = parseFloat(document.getElementById("inputt").value) + l;
+l = f;
+document.getElementById("inputt").value = "";
+m = "x-1";
+}
+
+let s; 
+function equalto(){
+s = parseFloat(document.getElementById("inputt").value);
+if(m=="+"){
+c = j + s;
+document.getElementById("inputt").value = c;
+j=0;
+}
+else if(m=="-"){
+c = k - s;
+document.getElementById("inputt").value = c;
+k=0;
+}
+if(m=="*"){
+c = o * s;
+document.getElementById("inputt").value = c;
+o=0;
+}
+if(m=="/"){
+c = n / s;
+document.getElementById("inputt").value = c;
+n=0;
+}
+if(m=="1/x"){
+c = 1/i;
+document.getElementById("inputt").value = c;
+i=0;
+}
+if(m=="x2"){
+c = Math.pow(h,2);
+document.getElementById("inputt").value = c;
+h = 0;
+}
+if(m=="x-1"){
+c = Math.sqrt(l);
+document.getElementById("inputt").value = c;
+l = 0;
+}
+}
+</script>
+</BODY>
+</HTML>
